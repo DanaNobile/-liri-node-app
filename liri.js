@@ -9,3 +9,31 @@ var keys = require("./keys.js");
 // Allows access to keys information 
 var spotify = new Spotify(keys.spotify);
 
+// Arguments
+var action = process.argv[2];
+var input = process.argv[3];
+var nodeArgs = process.argv;
+
+console.log("Command chosen: " + action);
+
+//Switch-case statement for different commands
+switch (action) {
+    case "concert-this":
+        concert();
+        break;
+
+    case "spotify-this-song":
+        song();
+        break;
+
+    case "movie-this":
+        movie();
+        break;
+
+    case "do-what-it-says":
+        random();
+        break;
+};
+
+// Command Functions 
+
