@@ -16,7 +16,7 @@ var nodeArgs = process.argv;
 
 console.log("Command chosen: " + action);
 
-//Switch-case statement for different commands
+//Switch-case statement for different commands 
 switch (action) {
     case "concert-this":
         concert();
