@@ -33,7 +33,7 @@ switch (inputTopic) {
         break;
 
     case "do-what-it-says":
-        doWhatInfo();
+        doWhatItSays();
         break;
 }
 
@@ -54,10 +54,9 @@ function bandInfo() {
 
     var queryURL = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=codingbootcamp";
 
-    console.log(queryURL);
+    // console.log(queryURL);
 
-    var moment = require('moment'); // require
-    moment().format();
+
 
     axios.get(queryURL).then(
         function (response) {
@@ -182,3 +181,19 @@ function movieInfo() {
             console.log(error.config);
         });
 }
+
+
+// =========================== Do What It Says =========================== //
+
+function doWhatItSays() {
+
+    fs.readFile("random.txt", "utf8", function (error, data) {
+        if (error) {
+            return console.log(error);
+        }
+        var output = data.split(",");
+        for (var i = 0; i < output.length; i++) {
+            console.log(output[i]);
+        }
+    });
+};
