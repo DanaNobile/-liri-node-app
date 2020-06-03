@@ -103,6 +103,11 @@ function bandInfo() {
 
 function songInfo() {
     var songName = "";
+
+    if (userInput.length <= 3) {
+        songName = "the sign ace of base";
+    }
+
     for (var i = 3; i < userInput.length; i++) {
         if (i > 3 && i < userInput.length) {
             songName = songName + "+" + userInput[i];
