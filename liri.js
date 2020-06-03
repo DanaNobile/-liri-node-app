@@ -56,13 +56,18 @@ function bandInfo() {
 
     console.log(queryURL);
 
+    var moment = require('moment'); // require
+    moment().format();
+
     axios.get(queryURL).then(
         function (response) {
             // console.log(response);
             console.log("Venue Name: " + response.data[0].venue.name);
-            console.log("Venue Location: " + response.data[0].venue.city);
-            console.log("Venue Location: " + response.data[0].venue.state);
-            // console.log(moment("Concert Date: " + bandResponse.data[0].datetime).format("MM/DD/YYYY"));
+            console.log("City: " + response.data[0].venue.city);
+            console.log("State: " + response.data[0].venue.region);
+            console.log("Date: " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
+
+
         }
     )
 
