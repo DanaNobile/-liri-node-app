@@ -1,0 +1,12 @@
+Command Requested: spotify-this-songNaN. 
+Command Requested: spotify-this-songNaN. 
+Command Requested: spotify-this-songhungry. 
+Command Requested: spotify-this-song hungry. 
+Command Requested: spotify-this-song /usr/local/bin/node,/Users/dlukasik/Documents/UCF/Homework/Liri/liri-node-app/liri.js,spotify-this-song,hungry,eyes. 
+Command Requested: spotify-this-song 5. 
+Command Requested: spotify-this-song hungry. 
+Command Requested: spotify-this-song /usr/local/bin/node,/Users/dlukasik/Documents/UCF/Homework/Liri/liri-node-app/liri.js,spotify-this-song,hungry,eyes. 
+Command Requested: spotify-this-song /usr/local/bin/node,/Users/dlukasik/Documents/UCF/Homework/Liri/liri-node-app/liri.js,spotify-this-song,hungry,eyes. 
+Command Requested: spotify-this-song hungry. 
+Command Requested: spotify-this-song hungry. 
+Command Requested: spotify-this-song hungry. 

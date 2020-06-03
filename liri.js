@@ -13,6 +13,7 @@ var spotifyKeyInfo = require("./keys.js");
 
 var userInput = process.argv;
 var inputTopic = process.argv[2];
+var logInput = process.argv[3]
 
 // console.log(" \n Hi, I'm Liri! What do you want to do today? \n Choose from the following: 'concert-this', 'spotify-this-song', 'movie-this' or 'do-what-it-says'");
 
@@ -205,4 +206,29 @@ function doWhatItSays() {
             console.log(output[i]);
         }
     });
+
+
 };
+
+
+// =========================== Logging Inputs=========================== //
+
+// As always, we grab the fs package to handle read/write.
+var fs = require("fs");
+
+
+
+fs.appendFile('log.txt', 'Command Requested: ' + inputTopic + ' ' + logInput + ". \n", function (err) {
+
+    // If an error was experienced we will log it.
+    if (err) {
+        console.log(err);
+    }
+
+    // If no error is experienced, we'll log the phrase "Content Added" to our node console.
+    else {
+        console.log("Your search as been added to the Log file!");
+    }
+
+
+});
