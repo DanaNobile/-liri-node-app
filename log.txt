@@ -10,3 +10,10 @@ Command Requested: spotify-this-song /usr/local/bin/node,/Users/dlukasik/Documen
 Command Requested: spotify-this-song hungry. 
 Command Requested: spotify-this-song hungry. 
 Command Requested: spotify-this-song hungry. 
+Command Requested: spotify-this-song toxic. 
+Command Requested: spotify-this-song toxic. 
+Command Requested: spotify-this-song toxic. 
+Command Requested: spotify-this-song toxic. 
+Command Requested: spotify-this-song all. 
+Command Requested: undefined undefined. 
+Command Requested: undefined undefined. 
