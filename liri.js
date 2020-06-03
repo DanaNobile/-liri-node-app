@@ -142,6 +142,10 @@ function songInfo() {
 
 function movieInfo() {
     var movieName = "";
+    if (userInput.length <= 3) {
+        movieName = "Mr. Nobody";
+    }
+
     for (var i = 3; i < userInput.length; i++) {
         if (i > 3 && i < userInput.length) {
             movieName = movieName + "+" + userInput[i];
