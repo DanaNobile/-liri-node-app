@@ -13,43 +13,33 @@ var spotifyKeyInfo = require("./keys.js");
 
 var userInput = process.argv;
 var inputTopic = process.argv[2];
+var input = process.argv[3];
 
 
-// console.log(" \n Hi, I'm Liri! What do you want to do today? \n Choose from the following: 'concert-this', 'spotify-this-song', 'movie-this' or 'do-what-it-says'");
-
-var inquirer = require("inquirer");
-
-// Created a series of questions
-inquirer.prompt([
-
-    {
-        type: "checkbox",
-        name: "carryingWhat",
-        message: "What are you carrying in your hands??",
-        choices: ["TV", "Slice of Toast", "Butter Knife"]
-    },
-])
 
 
-switch (inputTopic) {
-    case "concert-this":
-        bandInfo();
-        break;
-
-    case "spotify-this-song":
-        songInfo();
-        break;
-
-    case "movie-this":
-        movieInfo();
-        break;
-
-    case "do-what-it-says":
-        doWhatItSays();
-        break;
-}
 
 
+function liriSwitch(inputTopic) {
+    switch (inputTopic) {
+        case "concert-this":
+            bandInfo();
+            break;
+
+        case "spotify-this-song":
+            songInfo();
+            break;
+
+        case "movie-this":
+            movieInfo();
+            break;
+
+        case "do-what-it-says":
+            doWhatItSays();
+            break;
+    }
+
+};
 // =========================== Concert =========================== //
 
 
@@ -207,19 +197,49 @@ function movieInfo() {
 // =========================== Do What It Says =========================== //
 
 function doWhatItSays() {
+    var fs = require("fs");
 
-    fs.readFile("random.txt", "utf8", function (error, data) {
-        if (error) {
+    fs.readFile("random.txt", "utf8", (err, data, ) => {
+
+        if (err) {
             return console.log(error);
         }
-        var output = data.split(",");
-        for (var i = 0; i < output.length; i++) {
-            console.log(output[i]);
-        }
+
+        else {
+
+            // console.log(data);
+            //splits the string at the comma to two different strings, in an array
+            var rand = data.split(',');
+            console.log(rand);
+
+            let inputTopic = rand[0];
+            console.log(rand[0])
+
+            let songName = rand[1];
+            console.log(rand[1]);
+
+            songInfo(inputTopic, songName)
+
+            // switch (inputTopic) {
+            //     case "spotify-this-song":
+            //         songInfo(rand[1]);
+            //         break;
+            // };
+
+            //accessing the strings in the array and assigning the values to variables action and input
+            // let rando1 = JSON.stringify(rand[0]);
+            // console.log(rando1);
+
+            // let rando2 = JSON.stringify(rand[1]);
+            // console.log(rando2);
+        };
+
+        // };
+
     });
 
-
 };
+
 
 
 // =========================== Logging Inputs=========================== //
@@ -246,3 +266,5 @@ fs.appendFile('log.txt', 'Command Requested: ' + inputTopic + ' ' + logInput + "
     //     console.log(logInput[i]);
     // }
 });
+
+liriSwitch(inputTopic)
