@@ -62,28 +62,11 @@ function bandInfo() {
             console.log("Date: " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
         }
     )
-
         .catch(function (error) {
             if (error.response) {
-                // The request was made and the server responded with a status code
-                // that falls out of the range of 2xx
-                console.log("---------------Data---------------");
-                console.log(error.response.data);
-                console.log("---------------Status---------------");
-                console.log(error.response.status);
-                console.log("---------------Status---------------");
-                console.log(error.response.headers);
-            } else if (error.request) {
-                // The request was made but no response was received
-                // `error.request` is an object that comes back with details pertaining to the error that occurred.
-                console.log(error.request);
-            } else {
-                // Something happened in setting up the request that triggered an Error
-                console.log("Error", error.message);
+                console.log(error)
             }
-            console.log(error.config);
         });
-
 
 
 }
@@ -119,6 +102,7 @@ function songInfo() {
         console.log("URL: " + songResponse.tracks.items[0].preview_url);
         console.log("Album: " + songResponse.tracks.items[0].album.name);
     });
+
 
 }
 
@@ -157,23 +141,8 @@ function movieInfo() {
         })
         .catch(function (error) {
             if (error.response) {
-                // The request was made and the server responded with a status code
-                // that falls out of the range of 2xx
-                console.log("---------------Data---------------");
-                console.log(error.response.data);
-                console.log("---------------Status---------------");
-                console.log(error.response.status);
-                console.log("---------------Status---------------");
-                console.log(error.response.headers);
-            } else if (error.request) {
-                // The request was made but no response was received
-                // `error.request` is an object that comes back with details pertaining to the error that occurred.
-                console.log(error.request);
-            } else {
-                // Something happened in setting up the request that triggered an Error
-                console.log("Error", error.message);
+                console.log(error)
             }
-            console.log(error.config);
         });
 }
 
@@ -210,7 +179,6 @@ fs.appendFile('log.txt', 'Command Requested: ' + inputTopic + ', ' + input + ". 
     if (err) {
         console.log(err);
     }
-
     else {
         console.log("Your search as been added to the Log file!");
     }
