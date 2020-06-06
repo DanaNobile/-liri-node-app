@@ -53,5 +53,5 @@ This is an interactive node application that allows the user to interact with th
 * Stack Overflow 
 
 **Images:**
-![GitHub Logo](/Images/liri-switch.png)
-Format: ![Alt Text](url)
+Image: Switch Statement
+![switch statement](/Images/liri-switch.png)
