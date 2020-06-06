@@ -91,10 +91,6 @@ function bandInfo() {
 // This takes in the command: 'spotify-this' 'song title' and returns the artist, song, album url and album date, using the Spotify API and unique spotify ID and Secret. 
 
 function songInfo() {
-    // var songSearch = "";
-
-
-
     for (var i = 3; i < userInput.length; i++) {
         if (i > 3 && i < userInput.length) {
             songSearch = songSearch + "+" + userInput[i];
@@ -196,20 +192,13 @@ function doWhatItSays() {
         }
 
         var dataArr = data.split(",");
-        console.log(dataArr);
-        console.log(dataArr[0], dataArr[1]);
         let inputTopic = dataArr[0];
         songSearch = dataArr[1];
+        songInfo();
 
-        switch (inputTopic) {
-            case "spotify-this-song":
-                songInfo();
-                break;
-        }
-    })
-
+    }
+    );
 }
-
 
 // =========================== Logging Inputs=========================== //
 // This takes in the command line queries and writes them to the log.txt file. 
