@@ -53,5 +53,28 @@ This is an interactive node application that allows the user to interact with th
 * Stack Overflow 
 
 **Images:**
-Image: Switch Statement
+
+* Image: Global Variables
+![switch statement](/Images/liri-intro-global-variables.png)
+
+
+* Image: Switch Statement
 ![switch statement](/Images/liri-switch.png)
+
+
+* Image: Concert Function
+![switch statement](/Images/liri-band-function.png)
+
+
+* Image: Spotify/Song Function
+![switch statement](/Images/liri-spotify-function.png)
+
+
+* Image: Movie Function
+![switch statement](/Images/liri-movie-function.png)
+
+* Image: Do This Function
+![switch statement](/Images/liri-do-what-it-says-function.png)
+
+* Image: Switch Function Called for Doc Statement
+![switch statement](/Images/liri-call-function.png)
