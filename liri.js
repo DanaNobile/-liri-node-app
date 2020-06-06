@@ -4,7 +4,7 @@ require("dotenv").config();
 
 // These are the gloabl variables 
 var fs = require("fs");
-var moment = require("moment");
+var moment = require("moment"); $$
 
 var axios = require("axios");
 var Spotify = require("node-spotify-api");
@@ -184,5 +184,8 @@ fs.appendFile('log.txt', 'Command Requested: ' + inputTopic + ', ' + input + ". 
     }
 
 });
+
+
+// Calls switch function for file 
 
 liriSwitch(inputTopic)

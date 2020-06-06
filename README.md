@@ -1,6 +1,6 @@
 # -liri-node-app
 
-#URL: https://youtu.be/1mJ6plz9TVM
+#URL: https://youtu.be/D0XnRSZt4cc
 
 #Liri Bot
 This is an interactive node application that allows the user to interact with the js file and generate requested outputs.
@@ -51,3 +51,7 @@ This is an interactive node application that allows the user to interact with th
 * UCF Bootcamp student collaboration
 * UCF Bootcamp class activities
 * Stack Overflow 
+
+**Images:**
+![GitHub Logo](/Images/liri-switch.png)
+Format: ![Alt Text](url)
