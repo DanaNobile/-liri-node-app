@@ -1,14 +1,15 @@
 # -liri-node-app
 
+#Liri Bot
 This is an interactive node application that allows the user to interact with the js file and generate requested outputs.
 
-Commands:
-node liri.js concert-this
-node liri.js spotify-this-song
-node liri.js movie-this
-node liri.js do-what-it-says
+**Commands:**
+* node liri.js concert-this
+    * node liri.js spotify-this-song
+    * node liri.js movie-this
+    * node liri.js do-what-it-says
 
-Results:
+**Results:**
 node liri.js concert-this 'artist/band name':
 Name of venue
 Venue location
@@ -33,18 +34,18 @@ Rotten Tomatoes Rating of the movie
 node liri.js do-what-it-says
 Prints the spotify results for “I want it that way” stored in the random.txt file
 
-APIs Used:
+**APIs Used:****
 Spotify
 Bands In town
 OMBD
 
-Languages and Libraries:
+**Languages and Libraries:**
 Javascript
 
-Development Platform:
+**Development Platform:**
 Node.js
 
-References:
+**References:**
 UCF Bootcamp student collaboration
 UCF Bootcamp class activities
 Stack Overflow 

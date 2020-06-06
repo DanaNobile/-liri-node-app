@@ -234,3 +234,10 @@ Command Requested: spotify-this-song, undefined.
 Command Requested: movie-this, titanic. 
 Command Requested: movie-this, undefined. 
 Command Requested: do-what-it-says, undefined. 
+Command Requested: concert-this, undefined. 
+Command Requested: concert-this, pink. 
+Command Requested: spotify-this-song, blinded by the light. 
+Command Requested: spotify-this-song, undefined. 
+Command Requested: movie-this, vanilla sky. 
+Command Requested: movie-this, undefined. 
+Command Requested: do-what-it-says, undefined. 
