@@ -14,6 +14,7 @@ var spotifyKeyInfo = require("./keys.js");
 var userInput = process.argv;
 var inputTopic = process.argv[2];
 var input = process.argv[3];
+var songSearch = "";
 
 
 // This function takes in the search commands depending on the user's input and toggles between commands as entered. 
@@ -90,7 +91,9 @@ function bandInfo() {
 // This takes in the command: 'spotify-this' 'song title' and returns the artist, song, album url and album date, using the Spotify API and unique spotify ID and Secret. 
 
 function songInfo() {
-    var songSearch = "";
+    // var songSearch = "";
+
+
 
     for (var i = 3; i < userInput.length; i++) {
         if (i > 3 && i < userInput.length) {
@@ -100,7 +103,6 @@ function songInfo() {
             songSearch += userInput[i];
         }
     }
-
     if (songSearch === "") {
         songSearch = "The Sign Ace of Base";
     } else if (input) {
@@ -196,22 +198,23 @@ function doWhatItSays() {
         var dataArr = data.split(",");
         console.log(dataArr);
         console.log(dataArr[0], dataArr[1]);
-        action1 = dataArr[0];
-        functionData1 = dataArr[1];
+        let inputTopic = dataArr[0];
+        songSearch = dataArr[1];
 
-        liriSwitch(action1, functionData1);
-
+        switch (inputTopic) {
+            case "spotify-this-song":
+                songInfo();
+                break;
+        }
     })
 
 }
 
 
 // =========================== Logging Inputs=========================== //
-
+// This takes in the command line queries and writes them to the log.txt file. 
 
 var fs = require("fs");
-
-let logInput = process.argv[2]
 
 fs.appendFile('log.txt', 'Command Requested: ' + inputTopic + ', ' + input + ". \n", function (err, ) {
 
