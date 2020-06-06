@@ -106,3 +106,7 @@ Command Requested: spotify-this-song sin.
 Command Requested: sptify-this-song Blinded. 
 Command Requested: spotify-this-song blinded. 
 Command Requested: movie-this titanic. 
+Command Requested: spotify-this-song, spotify-this-song. 
+Command Requested: spotify-this-song, spotify-this-song. 
+Command Requested: spotify-this-song, blinded by the light. 
+Command Requested: spotify-this-song, blinded. 

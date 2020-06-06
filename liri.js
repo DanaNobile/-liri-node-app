@@ -39,7 +39,7 @@ function liriSwitch(inputTopic) {
 
 };
 // =========================== Concert- This =========================== //
-
+// This takes in the command: 'conert-this' 'band or artisit name' and returns the venue, city, state, and date of the upcoming concert, using the Bands In Town API.
 
 function bandInfo() {
     var bandSearch = "";
@@ -55,7 +55,6 @@ function bandInfo() {
 
     axios.get(queryURL).then(
         function (response) {
-            // console.log(response);
             console.log("Venue Name: " + response.data[0].venue.name);
             console.log("City: " + response.data[0].venue.city);
             console.log("State: " + response.data[0].venue.region);
@@ -88,6 +87,7 @@ function bandInfo() {
 
 }
 // =========================== Spotify-This =========================== //
+// This takes in the command: 'spotify-this' 'song title' and returns the artist, song, album url and album date, using the Spotify API and unique spotify ID and Secret. 
 
 function songInfo() {
     var songSearch = "";
@@ -126,6 +126,7 @@ function songInfo() {
 
 
 // =========================== Movie-This =========================== //
+// This takes in the command: 'movie-this' 'movie name' and returns the movie name, release year, IMBD rating, Rotten Tomatoes rating, production coutnry, language, plot and actors of the movie using the OMBD API. 
 
 function movieInfo() {
     var movieSearch = "";
@@ -181,6 +182,8 @@ function movieInfo() {
 
 // =========================== Do What It Says =========================== //
 
+// This takes in the command 'do-what-it-says' and references the information in the random.txt file,passes it through the spotify-this function, and returns the artist, song, album url and album date. 
+
 function doWhatItSays() {
     var fs = require("fs");
 
@@ -205,27 +208,21 @@ function doWhatItSays() {
 
 // =========================== Logging Inputs=========================== //
 
-// As always, we grab the fs package to handle read/write.
+
 var fs = require("fs");
 
-var logInput = process.argv[3]
+let logInput = process.argv[2]
 
-fs.appendFile('log.txt', 'Command Requested: ' + inputTopic + ' ' + logInput + ". \n", function (err, ) {
+fs.appendFile('log.txt', 'Command Requested: ' + inputTopic + ', ' + input + ". \n", function (err, ) {
 
-    // If an error was experienced we will log it.
     if (err) {
         console.log(err);
     }
 
-    // If no error is experienced, we'll log the phrase "Content Added" to our node console.
     else {
         console.log("Your search as been added to the Log file!");
     }
 
-    // var logInput = process.argv[3].split(",");
-    // for (var i = 0; i < logInput.length; i++) {
-    //     console.log(logInput[i]);
-    // }
 });
 
 liriSwitch(inputTopic)
