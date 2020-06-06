@@ -2,6 +2,7 @@
 // This code to read and set any environment variables with the dotenv package
 require("dotenv").config();
 
+// These are the gloabl variables 
 var fs = require("fs");
 var moment = require("moment");
 
@@ -9,16 +10,13 @@ var axios = require("axios");
 var Spotify = require("node-spotify-api");
 
 var spotifyKeyInfo = require("./keys.js");
-// let keys = require("./assets/keys.js");
 
 var userInput = process.argv;
 var inputTopic = process.argv[2];
 var input = process.argv[3];
 
 
-
-
-
+// This function takes in the search commands depending on the user's input and toggles between commands as entered. 
 
 function liriSwitch(inputTopic) {
     switch (inputTopic) {
@@ -40,25 +38,20 @@ function liriSwitch(inputTopic) {
     }
 
 };
-// =========================== Concert =========================== //
+// =========================== Concert- This =========================== //
 
 
 function bandInfo() {
-    var bandName = "";
+    var bandSearch = "";
     for (var i = 3; i < userInput.length; i++) {
         if (i > 3 && i < userInput.length) {
-            bandName = bandName + "+" + userInput[i];
+            bandSearch = bandSearch + "+" + userInput[i];
         }
         else {
-            bandName += userInput[i];
+            bandSearch += userInput[i];
         }
     }
-
-    var queryURL = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=codingbootcamp";
-
-    // console.log(queryURL);
-
-
+    var queryURL = "https://rest.bandsintown.com/artists/" + bandSearch + "/events?app_id=codingbootcamp";
 
     axios.get(queryURL).then(
         function (response) {
@@ -67,8 +60,6 @@ function bandInfo() {
             console.log("City: " + response.data[0].venue.city);
             console.log("State: " + response.data[0].venue.region);
             console.log("Date: " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
-
-
         }
     )
 
@@ -96,27 +87,24 @@ function bandInfo() {
 
 
 }
-// =========================== Spotify =========================== //
-
-
-
-// var spotify = new Spotify(keys.spotify);
-
+// =========================== Spotify-This =========================== //
 
 function songInfo() {
-    var songName = "";
-
-    if (userInput.length <= 3) {
-        songName = "the sign ace of base";
-    }
+    var songSearch = "";
 
     for (var i = 3; i < userInput.length; i++) {
         if (i > 3 && i < userInput.length) {
-            songName = songName + "+" + userInput[i];
+            songSearch = songSearch + "+" + userInput[i];
         }
         else {
-            songName += userInput[i];
+            songSearch += userInput[i];
         }
+    }
+
+    if (songSearch === "") {
+        songSearch = "The Sign Ace of Base";
+    } else if (input) {
+        songSearch = input;
     }
 
     var spotify = new Spotify({
@@ -124,8 +112,7 @@ function songInfo() {
         secret: spotifyKeyInfo["spotify"].secret
     });
 
-
-    spotify.request('https://api.spotify.com/v1/search?q=track:' + songName + '&type=track&limit=10', function (error, songResponse) {
+    spotify.request('https://api.spotify.com/v1/search?q=track:' + songSearch + '&type=track&limit=10', function (error, songResponse) {
         if (error) {
             return console.log(error);
         }
@@ -138,26 +125,24 @@ function songInfo() {
 }
 
 
-
-
-// =========================== Movie =========================== //
+// =========================== Movie-This =========================== //
 
 function movieInfo() {
-    var movieName = "";
+    var movieSearch = "";
     if (userInput.length <= 3) {
-        movieName = "Mr. Nobody";
+        movieSearch = "Mr. Nobody";
     }
 
     for (var i = 3; i < userInput.length; i++) {
         if (i > 3 && i < userInput.length) {
-            movieName = movieName + "+" + userInput[i];
+            movieSearch = movieSearch + "+" + userInput[i];
         }
         else {
-            movieName += userInput[i];
+            movieSearch += userInput[i];
         }
     }
 
-    var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+    var queryUrl = "http://www.omdbapi.com/?t=" + movieSearch + "&y=&plot=short&apikey=trilogy";
     console.log(queryUrl);
 
     axios.get(queryUrl).then(
@@ -205,41 +190,17 @@ function doWhatItSays() {
             return console.log(error);
         }
 
-        else {
+        var dataArr = data.split(",");
+        console.log(dataArr);
+        console.log(dataArr[0], dataArr[1]);
+        action1 = dataArr[0];
+        functionData1 = dataArr[1];
 
-            // console.log(data);
-            //splits the string at the comma to two different strings, in an array
-            var rand = data.split(',');
-            console.log(rand);
+        liriSwitch(action1, functionData1);
 
-            let inputTopic = rand[0];
-            console.log(rand[0])
+    })
 
-            let songName = rand[1];
-            console.log(rand[1]);
-
-            songInfo(inputTopic, songName)
-
-            // switch (inputTopic) {
-            //     case "spotify-this-song":
-            //         songInfo(rand[1]);
-            //         break;
-            // };
-
-            //accessing the strings in the array and assigning the values to variables action and input
-            // let rando1 = JSON.stringify(rand[0]);
-            // console.log(rando1);
-
-            // let rando2 = JSON.stringify(rand[1]);
-            // console.log(rando2);
-        };
-
-        // };
-
-    });
-
-};
-
+}
 
 
 // =========================== Logging Inputs=========================== //
