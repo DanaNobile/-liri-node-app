@@ -55,7 +55,7 @@ This is an interactive node application that allows the user to interact with th
 **Images:**
 
 * Image: Global Variables
-![switch statement](/Images/liri-intro-global-variables.png)
+![variables](/Images/liri-intro-global-variables.png)
 
 
 * Image: Switch Statement
@@ -63,18 +63,18 @@ This is an interactive node application that allows the user to interact with th
 
 
 * Image: Concert Function
-![switch statement](/Images/liri-band-function.png)
+![concert](/Images/liri-band-function.png)
 
 
 * Image: Spotify/Song Function
-![switch statement](/Images/liri-spotify-function.png)
+![song](/Images/liri-spotify-function.png)
 
 
 * Image: Movie Function
-![switch statement](/Images/liri-movie-function.png)
+![movie](/Images/liri-movie-function.png)
 
 * Image: Do This Function
-![switch statement](/Images/liri-do-what-it-says-function.png)
+![do this](/Images/liri-do-what-it-says-function.png)
 
 * Image: Switch Function Called for Doc Statement
-![switch statement](/Images/liri-call-function.png)
+![switch function](/Images/liri-call-function.png)
